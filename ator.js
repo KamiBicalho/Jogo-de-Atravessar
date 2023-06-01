@@ -11,7 +11,9 @@ function movimentarVaca(){
     yVaca -= 3;
   }
   if(keyIsDown(DOWN_ARROW)){
-    yVaca += 3;
+    if(podeSeMover()){
+      yVaca += 3;
+    }
   }
 }
 
@@ -20,7 +22,9 @@ function verificarColisao(){
     colisao = collideRectRect(xCarros[i], yCarros[i], comprimentoCarro, alturaCarro, xVaca, yVaca, 28, 25);  
     if (colisao){
       voltarParaPosicaoInicial();
-      meusPontos = 0;
+      if(pontosMaiorQueZero()){
+      meusPontos -= 1;
+      }
     }
   }
 }
@@ -30,8 +34,8 @@ function voltarParaPosicaoInicial(){
 }
 
 function mostrarPontos(){
-  textSize(23)
-  text(meusPontos, 160, 26)
+  textSize(23);
+  text(meusPontos, 160, 26);
 }
 
 function marcarPonto(){
@@ -39,4 +43,12 @@ function marcarPonto(){
     meusPontos += 1;
     voltarParaPosicaoInicial();
   }
+}
+
+function pontosMaiorQueZero(){
+  return meusPontos > 0;
+}
+
+function podeSeMover(){
+  return yVaca < 369; 
 }
