@@ -2,11 +2,13 @@
 
 let xCarros = [700, 700, 700];
 let yCarros = [42, 96, 150];
-let velocidadeCarros = [3.8, 5, 6.2];
+let velocidadeCarros = [2, 3.4, 4.8];
+let comprimentoCarro = 60;
+let alturaCarro = 40;
 
 function mostrarCarro(){
   for (let i = 0; i < imagemCarros.length ; i += 1) {
-  image(imagemCarros[i], xCarros[i], yCarros[i], 60, 40);
+  image(imagemCarros[i], xCarros[i], yCarros[i], comprimentoCarro, alturaCarro);
   }
 }
 

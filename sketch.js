@@ -8,4 +8,10 @@ function draw() {
   mostrarCarro();
   movimentarVaca();
   movimentarCarro();
+  verificarColisao();
+  
 }
+
+
+
+
