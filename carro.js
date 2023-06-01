@@ -1,38 +1,26 @@
-//variáveis do carro 1
-let xCarro1 = 700
-let yCarro1 = 42
-let velocidadeCarro1 = 3.8
+//código dos carros
 
-//cariáveis do carro 2
-let xCarro2 = 700
-let yCarro2 = 96
-let velocidadeCarro2 = 5
-
-//variáveis do carro 3
-let xCarro3 = 700
-let yCarro3 = 150
-let velocidadeCarro3 = 6.2
+let xCarros = [700, 700, 700];
+let yCarros = [42, 96, 150];
+let velocidadeCarros = [3.8, 5, 6.2];
 
 function mostrarCarro(){
-  image(imagemCarro1, xCarro1, yCarro1, 60, 40)
-  image(imagemCarro2, xCarro2, yCarro2, 60, 40)
-  image(imagemCarro3, xCarro3, yCarro3, 60, 40)
+  for (let i = 0; i < imagemCarros.length ; i += 1) {
+  image(imagemCarros[i], xCarros[i], yCarros[i], 60, 40);
+  }
 }
 
 function movimentarCarro(){
-  xCarro1 -= velocidadeCarro1
-  if (xCarro1<-70){
-    xCarro1 = 700
+  for (let i = 0; i < xCarros.length ; i += 1){
+    xCarros[i] -= velocidadeCarros[i];
+    // condição para voltar ao início
+    if (passouTodaTela(xCarros[i])){
+      xCarros[i] = 700;
+    }
   }
-  
-  xCarro2 -= velocidadeCarro2
-  if (xCarro2<-70){
-    xCarro2 = 700
-  }
-  
-  xCarro3 -= velocidadeCarro3
-  if (xCarro3<-70){
-    xCarro3 = 700
-  }
-  
 }
+
+function passouTodaTela (xCarro){
+  return xCarro < -70;
+}
+  
