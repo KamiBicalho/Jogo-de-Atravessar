@@ -9,7 +9,8 @@ function draw() {
   movimentarVaca();
   movimentarCarro();
   verificarColisao();
-  
+  mostrarPontos(); 
+  marcarPonto();
 }
 
 
