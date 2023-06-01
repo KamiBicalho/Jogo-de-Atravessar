@@ -15,7 +15,7 @@ function movimentarVaca(){
 }
 
 function verificarColisao(){
-  for (let i = 0; i < imagemCarros.length; i += 1) {
+  for (let i = 0; i < imagemCarros.length; i++) {
     colisao = collideRectRect(xCarros[i], yCarros[i], comprimentoCarro, alturaCarro, xVaca, yVaca, 28, 25);  
     if (colisao){
       colidiu();
